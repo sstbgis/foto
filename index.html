@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Redirecting...</title>
+</head>
+<body>
+    <script>
+        // Ambil parameter 'f' dari URL (contoh: ?f=image123.jpg)
+        const urlParams = new URLSearchParams(window.location.search);
+        const fileName = urlParams.get('f');
+        
+        // GANTI DENGAN URL WEB APP GOOGLE APPS SCRIPT ANDA
+        const gasBaseUrl = "https://script.google.com/macros/s/ID_SCRIPT_ANDA/exec";
+
+        if (fileName) {
+            // Arahkan otomatis ke Google Apps Script dengan membawa nama file
+            window.location.replace(gasBaseUrl + "?fileName=" + encodeURIComponent(fileName));
+        } else {
+            document.body.innerHTML = "<h3>Error: Nama file tidak ditemukan dalam link.</h3>";
+        }
+    </script>
+</body>
+</html>
